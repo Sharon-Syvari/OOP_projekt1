@@ -1,53 +1,94 @@
-package src;
+package src.Rühmatöö_1;
 
-import java.io.File;
+import src.Rühmatöö_1.Võistleja;
+
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
 public class Peaklass {
+    // Siin vist luua erinevad vastased
+    //Võistleja võistleja1
+    //Võistleja võistleja2
+    //Võistleja võistleja3
 
-    public static void main(String[] args) throws Exception {
-        List<Loom> loomadeList = loeLoomad("C:/Informaatika/Kevad/OOP/src/loomad.txt");
+    Võistleja[] võistlejad = new Võistleja[2];
 
-        Jahimees[] jahimehed = new Jahimees[3];
+    //rünnakud ja kaitsed võiks vist loosida. 2 nõrka ja 1 tugev
+    Kaitsed kaitse1 = new Kaitsed("kaitse1", 20);
+    Kaitsed kaitse2 = new Kaitsed("kaitse2", 10);
+    Kaitsed kaitse3 = new Kaitsed("kaitse3", 10);
 
-        Jahimees jahimees1 = new Jahimees("Mimi", 1000);
-        jahimehed[0] = jahimees1;
-        Jahimees jahimees2 = new Jahimees("Stuhle", 1000);
-        jahimehed[1] = jahimees2;
-        Jahimees jahimees3 = new Jahimees("Taavi", 1000);
-        jahimehed[2] = jahimees3;
+    Rünnakud rünnak1 = new Rünnakud("rünnak1", 20);
+    Rünnakud rünnak2 = new Rünnakud("rünnak2", 10);
+    Rünnakud rünnak3 = new Rünnakud("rünnak3", 10);
 
-        for (int i = 0; i < jahimehed.length; i++) {
-            Collections.shuffle(loomadeList);
-            int loomadeHulk = loomadeList.size();
-            for (int j = 0; j < 10; j++) {
-                jahimehed[i].lisaLoom(loomadeList.get(j));
+    Kaitsed[] kõik_kaitsed = new Kaitsed[3];
+    //kõik_kaitsed[0] = kaitse1;
+
+    public static void main(String[] args) {
+        //Mingi jutt alustuseks
+
+        //Esitletakse reeglid:
+        // 1. Valid enda tegelasele nime
+        // 2. Valid endale vastase
+        // 3. Vastase tugevuse põhjal loositakse Sulle uudne IT-teemaline projektiidee,
+        // mis võib hakata sisse tooma miljoneid või hoopis mõned kopikad.
+        // Rahasumma kujutab endast punktide hulka, mis Sa võidad, kui oma rühmakaaslasele pähe teed.
+        // 4. Loositakse esimene ründaja
+        // 5. Igal käigul üks võislteja ründab ja teine kaitseb.
+        // Kasutaja saab valida kummalgi korral kas ühe terve käigu või
+        // kaks osalist käiku. Käikudel on kindlad tugevused, mis määrab punktide vahemiku,
+        // mille hulgast loositakse käigi lõplik punktide hulk. Näiteks kui valida käik 1,
+        // mille tugevus on 10, siis sellest vahemikust loositakse punktid.
+        // Valikud antakse ette käigu ajal ning valiku tegemiseks tuleb sisestada käigule vastav number.
+        // 6. Mõlema rühmaliikme saadud punktid avaldatakse korraga ning 1 elu kaotab see,
+        // kelle punktide hulk on väiksem. Võrdse seisu korral ei kaota kumbki.
+        // 7. Kaotab see, kes esimesena kõikidest eludest ilma jääb.
+
+        //Küsitakse kasutaja nime
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Kirjutage oma nimi: ");
+        String kasutajanimi = scan.nextLine();
+        System.out.println(kasutajanimi);
+
+        //  Kaklus.võistlejad[0] = Võistleja(...)
+        //Esitletakse kasutaja omadused
+
+        //Lastakse valida vastane(int)
+        //  Kaklus.võistlejad[1] = Võistleja(...)
+
+        //Mäng algab.
+        //Loositakse alustaja ja antakse tulemusest ekraanil teada
+        //Võistleja alustaja = võistlejad[(int) Math.round(Math.random())];
+
+
+
+        //Igal korral lastakse valida kasutajal rünnaku - või kaitsevõte
+        // ja selle põhjal loositakse tema punktid
+
+        /** Kui alustab kasutaja
+        if (alustaja == võistlejad[0]) {
+            while (võistlejad[0].getElud() > 0 && võistlejad[0].getElud() > 0) {
+
             }
 
         }
-        for (int i = 0; i < jahimehed.length; i++) {
-            System.out.println(jahimehed[i].toString());
-        }
-    }
 
-    public static List<Loom> loeLoomad(String failinimi) throws Exception {
-        List<Loom> tulemus = new ArrayList<>();
-        File file = new File(failinimi);
-        try (Scanner s = new Scanner(file, "UTF-8")) {
-            while (s.hasNextLine()) {
-                String rida = s.nextLine();
-                String[] tükid = rida.split(",");
-                if (tükid.length == 3) {
-                    tulemus.add(new Kiskja(tükid[0], Integer.parseInt(tükid[1]), Double.parseDouble(tükid[2])));
-                } else {
-                    tulemus.add(new Herbivoor(tükid[0], Integer.parseInt(tükid[1]), Integer.parseInt(tükid[2]), Double.parseDouble(tükid[3])));
-                }
+        //Kui alustab arvuti
+        if (alustaja == võistlejad[1]) {
+            while (võistlejad[0].getElud() > 0 && võistlejad[0].getElud() > 0) {
+
             }
         }
-        return tulemus;
-    }
 
+        //Kaotab 1 elu see, kellel vähem punkte
+
+        // Kui arvuti kaotab
+        if (võistlejad[0].getElud() == 0) {
+
+        } else { //kui kasutaja kaotab
+
+        }*/
+    }
 }
