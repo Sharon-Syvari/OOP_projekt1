@@ -1,9 +1,11 @@
-package src;
+package src.Rühmatöö_1;
 
 import src.Rühmatöö_1.Kaitsed;
 import src.Rühmatöö_1.Rünnakud;
 
-public class Võistleja<kõik_kaitsed> {
+import java.util.ArrayList;
+
+public class Võistleja {
 
     private String nimi;
     private int elud = 3;
@@ -11,23 +13,18 @@ public class Võistleja<kõik_kaitsed> {
     private Kaitsed[] kaitsed = new Kaitsed[3];
     private Rünnakud[] rünnakud = new Rünnakud[3];
 
-    //rünnakud ja kaitsed võiks vist loosida. 2 nõrka ja 1 tugev
-    Kaitsed kaitse1 = new Kaitsed("kaitse1", 20);
-    Kaitsed kaitse2 = new Kaitsed("kaitse2", 10);
-    Kaitsed kaitse3 = new Kaitsed("kaitse3", 10);
-
-    Rünnakud rünnak1 = new Rünnakud("rünnak1", 20);
-    Rünnakud rünnak2 = new Rünnakud("rünnak2", 10);
-    Rünnakud rünnak3 = new Rünnakud("rünnak3", 10);
-
-    Kaitsed[] kõik_kaitsed = new Kaitsed[3];
-    kõik_kaitsed[0] = kaitse1;
-    Rünnakud[] kõik_rünnakud = new Rünnakud[3];
-
     Võistleja(String nimi, int käigu_punktid, Kaitsed[] kaitsed, Rünnakud[] rünnakud) {
         this.nimi = nimi;
         this.käigupunktid = käigu_punktid;
 
+    }
+
+    public int getElud() {
+        return elud;
+    }
+
+    public void setNimi(String nimi) {
+        this.nimi = nimi;
     }
 
     public String toString() {
@@ -36,4 +33,3 @@ public class Võistleja<kõik_kaitsed> {
                 "Võistleja käigupunktid: " + käigupunktid;
     }
 }
-
