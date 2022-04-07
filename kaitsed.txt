@@ -1,0 +1,9 @@
+Õpikukaas;5
+Kõrvalepõige;7
+Solvang;9
+Raamatuvirn;10
+Kaitsekilp;11
+Meediaskandaal;13
+Ristimärk;17
+Ihukaitsja;19
+Vabandus;22
