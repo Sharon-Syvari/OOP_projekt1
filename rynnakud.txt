@@ -1,0 +1,9 @@
+Lusikalöök;4
+Nõelapiste;8
+Pikselöök;9
+Labajalalöök;10
+Mõõgahoop;11
+Veeuputus;11
+Labidalöök;16
+Vibulask;17
+Orkaan;19
