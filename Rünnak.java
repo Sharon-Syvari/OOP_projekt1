@@ -1,4 +1,4 @@
-package src.Rühmatöö_sus;
+
 
 public class Rünnak {
     private String nimetus;
