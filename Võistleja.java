@@ -1,15 +1,16 @@
+package src.Ruhmatoo1;
 
 import java.util.ArrayList;
 
-public class Võistleja {
+public class Voistleja {
 
     private String nimi;
     private int elud = 3;
     private int käigupunktid;
     private ArrayList<Kaitse> kaitsed;
-    private ArrayList<Rünnak> rünnakud;
+    private ArrayList<Runnak> rünnakud;
 
-    Võistleja(String nimi, int käigupunktid, ArrayList<Kaitse> kaitsed, ArrayList<Rünnak> rünnakud) {
+    Voistleja(String nimi, int käigupunktid, ArrayList<Kaitse> kaitsed, ArrayList<Runnak> rünnakud) {
         this.nimi = nimi;
         this.käigupunktid = käigupunktid;
         this.kaitsed = kaitsed;
@@ -27,7 +28,7 @@ public class Võistleja {
         return kaitsed;
     }
 
-    public ArrayList<Rünnak> getRünnakud() {
+    public ArrayList<Runnak> getRünnakud() {
         return rünnakud;
     }
 
@@ -49,4 +50,3 @@ public class Võistleja {
                 "Võistleja käigupunktid: " + käigupunktid;
     }
 }
-
