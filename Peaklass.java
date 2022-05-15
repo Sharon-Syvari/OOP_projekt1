@@ -1,18 +1,18 @@
-//Siin puudu kasutaja käigupunktidega asjatamine
+package src.Ruhmatoo1;
 
 import java.io.File;
 import java.util.*;
 
 public class Peaklass {
 
-    public static List<Rünnak> loeRünnakud(String failinimi) throws Exception {
-        List<Rünnak> tulemus = new ArrayList<Rünnak>();
+    public static List<Runnak> loeRünnakud(String failinimi) throws Exception {
+        List<Runnak> tulemus = new ArrayList<Runnak>();
         File file = new File(failinimi);
         try (Scanner s = new Scanner(file, "UTF-8")) {
             while (s.hasNextLine()) {
                 String rida = s.nextLine();
                 String[] atribuudid = rida.split(";"); //rünnak kujul nimetus;tase;tugevus
-                tulemus.add(new Rünnak(atribuudid[0], Integer.parseInt(atribuudid[1])));
+                tulemus.add(new Runnak(atribuudid[0], Integer.parseInt(atribuudid[1])));
             }
         }
         return tulemus;
@@ -47,7 +47,7 @@ public class Peaklass {
 
     }
 
-    private static int kasutajaRünnak(Rünnak rünnak) {
+    private static int kasutajaRünnak(Runnak rünnak) {
         System.out.println("Valitud rünnak: " + rünnak.getNimetus());
         Random rand = new Random();
 
@@ -61,11 +61,11 @@ public class Peaklass {
         return rünnakutugevus;
     }
 
-    private static int arvutiRünnak(Rühmakaaslane arvuti) {
+    private static int arvutiRünnak(Ruhmakaaslane arvuti) {
         Random rand = new Random();
-        ArrayList<Rünnak> rünnakud = arvuti.getRünnakud();
+        ArrayList<Runnak> rünnakud = arvuti.getRünnakud();
         boolean sobivRünnak = false;
-        Rünnak valitudRünnak = null;
+        Runnak valitudRünnak = null;
         while (sobivRünnak == false) {
             valitudRünnak = rünnakud.get(rand.nextInt(rünnakud.size() - 1));
             if (valitudRünnak.getTugevus() <= arvuti.getKäigupunktid())
@@ -83,7 +83,7 @@ public class Peaklass {
         return rünnakutugevus;
     }
 
-    private static int arvutiKaitse(Rühmakaaslane arvuti) {
+    private static int arvutiKaitse(Ruhmakaaslane arvuti) {
         Random rand = new Random();
         ArrayList<Kaitse> kaitsed = arvuti.getKaitsed();
         boolean sobivKaitse = false;
@@ -125,13 +125,13 @@ public class Peaklass {
         String[] projektid = {"Eesti Nokia", "Metsaistutamisklubi kaardirakendus", "Interneti väljaprintimine", "Duell rühmakaaslasega", "Saa Hegeli ajaloofilosoofiast aru kolme minutiga", "Kuidas võita inimesi ja mõjutada sõpru", "N-mõõtmeline tetris"};
 
         // Loeb failist rünnakud ja kaitsed
-        ArrayList<Rünnak> rünnakud = (ArrayList<Rünnak>) loeRünnakud("rynnakud.txt");
+        ArrayList<Runnak> rünnakud = (ArrayList<Runnak>) loeRünnakud("rynnakud.txt");
         ArrayList<Kaitse> kaitsed = (ArrayList<Kaitse>) loeKaitsed("kaitsed.txt");
 
 
         // Juhuslikud rünnakud ja kaitsed kasutajale (1 tugev ja 2 nõrka rünnet ja kaitset)
         ArrayList<Kaitse> kaitsedKasutajale = new ArrayList<Kaitse>();
-        ArrayList<Rünnak> ründedKasutajale = new ArrayList<Rünnak>();
+        ArrayList<Runnak> ründedKasutajale = new ArrayList<Runnak>();
 
         int loendaTugevaid = 0;
         int loendaNõrku = 0;
@@ -150,7 +150,7 @@ public class Peaklass {
         loendaTugevaid = 0;
         loendaNõrku = 0;
         while (ründedKasutajale.size() < 3) {
-            Rünnak lisa = rünnakud.get(rand.nextInt((rünnakud.size() - 1)));
+            Runnak lisa = rünnakud.get(rand.nextInt((rünnakud.size() - 1)));
             if (lisa.getTugevus() > 12 && loendaTugevaid < 1) {
                 ründedKasutajale.add(lisa);
                 loendaTugevaid += 1;
@@ -181,27 +181,27 @@ public class Peaklass {
         kaitsedKolmandale.add(kaitsed.get(8));
 
         //Ründed
-        ArrayList<Rünnak> ründedEsimesele = new ArrayList<Rünnak>();
+        ArrayList<Runnak> ründedEsimesele = new ArrayList<Runnak>();
         ründedEsimesele.add(rünnakud.get(0));
         ründedEsimesele.add(rünnakud.get(1));
         ründedEsimesele.add(rünnakud.get(6));
 
-        ArrayList<Rünnak> ründedTeisele = new ArrayList<Rünnak>();
+        ArrayList<Runnak> ründedTeisele = new ArrayList<Runnak>();
         ründedTeisele.add(rünnakud.get(2));
         ründedTeisele.add(rünnakud.get(3));
         ründedTeisele.add(rünnakud.get(7));
 
-        ArrayList<Rünnak> ründedKolmandale = new ArrayList<Rünnak>();
+        ArrayList<Runnak> ründedKolmandale = new ArrayList<Runnak>();
         ründedKolmandale.add(rünnakud.get(4));
         ründedKolmandale.add(rünnakud.get(5));
         ründedKolmandale.add(rünnakud.get(8));
 
 
-        Rühmakaaslane kaaslane1 = new Rühmakaaslane("Peeter", 15, kaitsedEsimesele, ründedEsimesele, "Madal");
-        Rühmakaaslane kaaslane2 = new Rühmakaaslane("Minni", 25, kaitsedTeisele, ründedTeisele, "Keskmine");
-        Rühmakaaslane kaaslane3 = new Rühmakaaslane("Bobiina", 35, kaitsedKolmandale, ründedKolmandale, "Geenius");
+        Ruhmakaaslane kaaslane1 = new Ruhmakaaslane("Peeter", 15, kaitsedEsimesele, ründedEsimesele, "Madal");
+        Ruhmakaaslane kaaslane2 = new Ruhmakaaslane("Minni", 25, kaitsedTeisele, ründedTeisele, "Keskmine");
+        Ruhmakaaslane kaaslane3 = new Ruhmakaaslane("Bobiina", 35, kaitsedKolmandale, ründedKolmandale, "Geenius");
 
-        Rühmakaaslane[] kaaslased = {kaaslane1, kaaslane2, kaaslane3};
+        Ruhmakaaslane[] kaaslased = {kaaslane1, kaaslane2, kaaslane3};
 
 
         //Esitletakse reeglid:
@@ -236,7 +236,7 @@ public class Peaklass {
         System.out.println("----------");
 
         // Kasutaja võistleja loomine
-        Võistleja kasutaja = new Võistleja(kasutajanimi, 20, kaitsedKasutajale, ründedKasutajale);
+        Voistleja kasutaja = new Voistleja(kasutajanimi, 20, kaitsedKasutajale, ründedKasutajale);
 
         //Lastakse valida rühmakaaslane(int) ning väljastatakse selleks valikud
         Scanner scan2 = new Scanner(System.in);
@@ -252,7 +252,7 @@ public class Peaklass {
 
         System.out.println("Sisesta enda valitud rühmakaaslase number:");
         int rühmakaasklase_nr = scan.nextInt();
-        Rühmakaaslane vastane = kaaslased[rühmakaasklase_nr - 1];
+        Ruhmakaaslane vastane = kaaslased[rühmakaasklase_nr - 1];
         System.out.println("----------");
         System.out.println("Sinu rühmakaaslane: " + vastane.getNimi());
 
