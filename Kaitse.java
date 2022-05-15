@@ -1,4 +1,4 @@
-
+package src.Ruhmatoo1;
 
 public class Kaitse {
     private String nimetus;
@@ -22,4 +22,3 @@ public class Kaitse {
         return nimetus + " (Tugevus: "+ tugevus + ")";
     }
 }
-
