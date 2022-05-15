@@ -1,10 +1,10 @@
+package src.Ruhmatoo1;
 
-
-public class Rünnak {
+public class Runnak {
     private String nimetus;
     private int tugevus;
 
-    public Rünnak(String nimetus, int tugevus) {
+    public Runnak(String nimetus, int tugevus) {
         this.nimetus = nimetus;
         this.tugevus = tugevus;
     }
@@ -23,4 +23,3 @@ public class Rünnak {
         return nimetus + " (Tugevus: "+ tugevus + ")";
     }
 }
-
