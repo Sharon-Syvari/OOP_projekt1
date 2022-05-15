@@ -1,10 +1,12 @@
+package src.Ruhmatoo1;
+
 import java.util.ArrayList;
 
-public class Rühmakaaslane extends Võistleja {
+public class Ruhmakaaslane extends Voistleja {
 
     private String kõrgelennulisus;
 
-    Rühmakaaslane(String nimi, int käigupunktid, ArrayList<Kaitse> kaitsed, ArrayList<Rünnak> rünnakud, String kõrgelennulisus) {
+    Ruhmakaaslane(String nimi, int käigupunktid, ArrayList<Kaitse> kaitsed, ArrayList<Runnak> rünnakud, String kõrgelennulisus) {
         super(nimi, käigupunktid, kaitsed, rünnakud);
         this.kõrgelennulisus = kõrgelennulisus;
     }
